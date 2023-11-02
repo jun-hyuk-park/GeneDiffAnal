@@ -1,0 +1,11 @@
+Package: GeneDiffAnal
+Title: Differential Gene Expression Analysis
+Version: 0.1.0
+Authors@R: 
+    person("Jun Hyuk", "Park", , "jjunhyuk.park@mail.utoronto.ca", role = c("aut", "cre"))
+Description: Perform differential gene expression analysis on RNA copy counts data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: R (>= 3.1.0)
