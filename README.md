@@ -1,9 +1,15 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # GeneDiffAnal
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 ## Description
@@ -23,7 +29,10 @@ To install the latest version of the package:
 
 ``` r
 # install.packages("devtools")
+# library("devtools")
+require("devtools")
 devtools::install_github("jun-hyuk-park/GeneDiffAnal")
+library("GeneDiffAnal")
 ```
 
 To run the shinyApp: Under construction
@@ -36,16 +45,28 @@ data(package = "GeneDiffAnal") # optional
 browseVignettes("GeneDiffAnal")
 ```
 
+The *read_data* function takes RNAseq data and convert into matrix data object.
+
+The *cpm* function takes RNAseq data matrix and convert into counts per million 
+unit.
+
 ## Contributions
 
 The name of the author of the package is Jun Hyuk Park. I wrote all
 codes in this R package as contribution. Generative AI was not used.
+This R package takes RNAseq data and perform differential gene
+expression analysis.
 
 ## References
 
-R Core Team (2023). *R: A Language and Environment for Statistical
+R Core Team. (2023). *R: A Language and Environment for Statistical
 Computing*. R Foundation for Statistical Computing, Vienna, Austria.
 <https://www.R-project.org/>.
+
+Koch CM, Chiu SF, Akbarpour M, Bharat A, Ridge KM, Bartom ET, Winter DR.
+(2023). *A Beginner's Guide to Analysis of RNA Sequencing Data.* Am J
+Respir Cell Mol Biol. 59(2):145-157. doi: 10.1165/rcmb.2017-0430TR.
+PMID: 29624415; PMCID: PMC6096346.
 
 ## Acknowledgement
 

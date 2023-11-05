@@ -21,3 +21,5 @@ read_data <- function(file_name, sep=",") {
   row.names(RNA_data) <- RNA_l$Gene
   return(RNA_data)
 }
+
+# [END]
