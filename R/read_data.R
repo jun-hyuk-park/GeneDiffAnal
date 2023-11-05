@@ -16,7 +16,7 @@
 #'
 #' @export
 read_data <- function(file_name, sep=",") {
-  RNA_l <- read.csv(file_name, sep=sep, header=TRUE)
+  RNA_l <- utils::read.csv(file_name, sep=sep, header=TRUE)
   RNA_data <- as.matrix(RNA_l[,2:ncol(RNA_l)])
   row.names(RNA_data) <- RNA_l$Gene
   return(RNA_data)
