@@ -13,7 +13,7 @@ cpm(matrix)
 Returns a CPM matrix
 }
 \description{
-A functions that calculates counts per million(cpm) of each gene for each
+A function that calculates counts per million(cpm) of each gene for each
 sample.
 }
 \examples{
@@ -29,6 +29,6 @@ cpm_d["A1BG", "Control1"]
 \references{
 Koch CM, Chiu SF, Akbarpour M, Bharat A, Ridge KM, Bartom ET, Winter DR.
 A Beginner's Guide to Analysis of RNA Sequencing Data.
-Am J Respir Cell Mol Biol. 2018 Aug;59(2):145-157.
+Am J Respir Cell Mol Biol. 2018. 59(2):145-157.
 doi: 10.1165/rcmb.2017-0430TR. PMID: 29624415; PMCID: PMC6096346.
 }
