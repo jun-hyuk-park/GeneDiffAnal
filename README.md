@@ -41,6 +41,8 @@ browseVignettes("GeneDiffAnal")
 The name of the author of the package is Jun Hyuk Park. I wrote all
 codes in this R package as contribution. Generative AI was not used.
 
+The stats R package is used for statistical test.
+
 ## References
 
 R Core Team (2023). *R: A Language and Environment for Statistical
@@ -65,3 +67,38 @@ This package was developed as part of an assessment for 2023 BCB410H:
 Applied Bioinformatics course at the University of Toronto, Toronto,
 CANADA. GeneDiffAnal welcomes issues, enhancement requests, and other
 contributions. To submit an issue, use the GitHub issues.
+
+## Package Structure
+
+``` r
+- GeneDiffAnal
+  |- TestingPackage.Rproj
+  |- DESCRIPTION
+  |- NAMESPACE
+  |- LICENSE
+  |- README
+  |- data
+    |- d.rda
+  |- inst
+    CITATION
+    |- extdata
+      |- d.csv
+  |- man
+    |- read_data.Rd
+    |- group_t_test.Rd
+    |- get_group_data.Rd
+    |- d.Rd
+    |- cpm.Rd
+  |- R
+    |- read_data.R
+    |- group_t_test.R
+    |- get_group_data.R
+    |- data.R
+    |- cpm.R
+  |- vignettes
+    |- GeneDiffAnalVignettes.Rmd
+  |- tests
+    |- testthat.R
+    |- testthat
+      |- test-cpm.R
+```

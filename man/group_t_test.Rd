@@ -4,12 +4,16 @@
 \alias{group_t_test}
 \title{Run Welch T Test On Control Group And Treatment Group}
 \usage{
-group_t_test(gene, data)
+group_t_test(gene, data, alternative = "two.sided")
 }
 \arguments{
 \item{gene}{A name of gene that we want to run t test on RNA expression of.}
 
 \item{data}{A matrix data of RNA counts of control and treatment groups.}
+
+\item{alternative}{A character string specifying the alternative hypothesis.
+Modify the alternative hypothesis if the control group's expression is less,
+the same or greater.}
 }
 \value{
 A list object of t.test result.
