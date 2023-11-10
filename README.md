@@ -41,11 +41,25 @@ browseVignettes("GeneDiffAnal")
 The name of the author of the package is Jun Hyuk Park. I wrote all
 codes in this R package as contribution. Generative AI was not used.
 
+The stats R package is used for statistical test.
+
 ## References
 
 R Core Team (2023). *R: A Language and Environment for Statistical
 Computing*. R Foundation for Statistical Computing, Vienna, Austria.
 <https://www.R-project.org/>.
+
+Wickham, H. and Bryan, J. (2019). R Packages (2nd edition). Newton,
+Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
+
+Koch CM, Chiu SF, Akbarpour M, Bharat A, Ridge KM, Bartom ET, Winter DR.
+A Beginner’s Guide to Analysis of RNA Sequencing Data. Am J Respir Cell
+Mol Biol. 2018. 59(2):145-157. doi: 10.1165/rcmb.2017-0430TR. PMID:
+29624415; PMCID: PMC6096346.
+
+B. L. WELCH. The generalization of student’s problem when several
+different population variances are involved. Biometrika. 1947.
+34(1-2):28-35.
 
 ## Acknowledgement
 
@@ -53,3 +67,38 @@ This package was developed as part of an assessment for 2023 BCB410H:
 Applied Bioinformatics course at the University of Toronto, Toronto,
 CANADA. GeneDiffAnal welcomes issues, enhancement requests, and other
 contributions. To submit an issue, use the GitHub issues.
+
+## Package Structure
+
+``` r
+- GeneDiffAnal
+  |- TestingPackage.Rproj
+  |- DESCRIPTION
+  |- NAMESPACE
+  |- LICENSE
+  |- README
+  |- data
+    |- d.rda
+  |- inst
+    CITATION
+    |- extdata
+      |- d.csv
+  |- man
+    |- read_data.Rd
+    |- group_t_test.Rd
+    |- get_group_data.Rd
+    |- d.Rd
+    |- cpm.Rd
+  |- R
+    |- read_data.R
+    |- group_t_test.R
+    |- get_group_data.R
+    |- data.R
+    |- cpm.R
+  |- vignettes
+    |- GeneDiffAnalVignettes.Rmd
+  |- tests
+    |- testthat.R
+    |- testthat
+      |- test-cpm.R
+```
