@@ -11,7 +11,7 @@
 #' the same or greater. 
 #' 
 #' @return A list object of t.test result.
-#'@references
+#' @references
 #'B. L. WELCH. The generalization of student's problem when several
 #'different population variances are involved. Biometrika. 1947. 34(1-2):28-35.
 

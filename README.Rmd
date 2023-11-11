@@ -109,6 +109,7 @@ To submit an issue, use the GitHub issues.
     |- get_group_data.R
     |- data.R
     |- cpm.R
+    |- heatmap_expression.R
   |- vignettes
     |- GeneDiffAnalVignettes.Rmd
   |- tests
