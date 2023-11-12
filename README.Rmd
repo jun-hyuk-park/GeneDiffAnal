@@ -21,8 +21,7 @@ knitr::opts_chunk$set(
 ## Description
 
 The purpose of this R package is to perform gene differential expression
-analysis.
-RNA copy counts are the biological data being analyzed.
+analysis. RNA copy counts are the biological data being analyzed.
 This R package adds gene differential expression analysis to a
 current work flow in bioinformatics and computational biology.
 This R package improves a current work flow in bioinformatics
@@ -35,8 +34,10 @@ R version 4.3.1 (2023-06-16 ucrt) and platform x86_64-w64-mingw32/x64
 To install the latest version of the package:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("jun-hyuk-park/GeneDiffAnal")
+install.packages("devtools")
+library("devtools")
+devtools::install_github("jun-hyuk-park/GeneDiffAnal", build_vignettes = TRUE)
+library("GeneDiffAnal")
 ```
 
 To run the shinyApp: Under construction
@@ -48,6 +49,30 @@ ls("package:GeneDiffAnal")
 data(package = "GeneDiffAnal") # optional
 browseVignettes("GeneDiffAnal")
 ```
+
+- cpm
+
+Convert A Matrix Of Given RNA Counts To A Matrix Of Counts Per Million.
+
+- d
+
+An arbitrary RNA counts data matrix included in this R package as an example.
+
+- expression_boxplot
+
+Boxplots expression of each group of a gene.
+
+- get_group_data
+
+Filters RNA data of control or treatment group.
+
+- group_t_test
+
+Run Welch t test on gene expression of control group and treatment group.
+
+- heatmap_expression
+
+Create a heatmap of expression of genes of samples in RNA level.
 
 ## Contributions
 

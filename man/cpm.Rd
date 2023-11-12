@@ -2,7 +2,7 @@
 % Please edit documentation in R/cpm.R
 \name{cpm}
 \alias{cpm}
-\title{Create A Matrix Of Given RNA Counts As Counts Per Million.}
+\title{Convert A Matrix Of Given RNA Counts To A Matrix Of Counts Per Million.}
 \usage{
 cpm(matrix)
 }

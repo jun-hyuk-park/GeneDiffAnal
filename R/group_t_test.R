@@ -24,3 +24,5 @@ group_t_test <- function(gene, data, alternative="two.sided") {
     stop(paste0(gene, " is not in data"))
   }
 }
+
+# [END]

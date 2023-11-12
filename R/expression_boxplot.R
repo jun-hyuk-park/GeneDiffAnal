@@ -8,7 +8,7 @@
 #' 
 #' @return plot
 
-expression_point_plot <- function(data, gene) {
+expression_boxplot <- function(data, gene) {
   if(gene %in% rownames(data)) {
   control_group <- get_group_data(data, "control")
   treatment_group <- get_group_data(data, "treatment")
@@ -18,11 +18,12 @@ expression_point_plot <- function(data, gene) {
                                 Counts = treatment_group[gene,])
   expression_table <- rbind(control_table, treatment_table)
   expression_plot <- ggplot2::ggplot(expression_table,
-                                     mapping=aes(x=Group, y=Counts)) +
-                     ggplot2::geom_boxplot() + labs(title=gene)
+                                     mapping=ggplot2::aes(x=Group, y=Counts)) +
+                     ggplot2::geom_boxplot() + ggplot2::labs(title=gene)
   return(expression_plot)
   } else {
     stop(paste0(gene, " is not found in data."))
   }
-
 }
+
+# [END]
