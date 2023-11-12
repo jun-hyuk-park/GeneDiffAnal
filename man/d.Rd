@@ -3,19 +3,15 @@
 \docType{data}
 \name{d}
 \alias{d}
-\title{RNA Counts}
+\title{Arbitrary RNA Counts matrix.}
 \format{
-A matrix
+A matrix where columns are the samples and rows are the genes. Each
+cell represents RNA counts.
 }
 \usage{
 d
 }
 \description{
-RNA Counts
-}
-\examples{
-\dontrun {
-d
-}
+Arbitrary RNA Counts matrix.
 }
 \keyword{datasets}

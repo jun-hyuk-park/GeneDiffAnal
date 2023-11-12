@@ -22,8 +22,10 @@ the package.
 To install the latest version of the package:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("jun-hyuk-park/GeneDiffAnal")
+install.packages("devtools")
+library("devtools")
+devtools::install_github("jun-hyuk-park/GeneDiffAnal", build_vignettes = TRUE)
+library("GeneDiffAnal")
 ```
 
 To run the shinyApp: Under construction
@@ -35,6 +37,32 @@ ls("package:GeneDiffAnal")
 data(package = "GeneDiffAnal") # optional
 browseVignettes("GeneDiffAnal")
 ```
+
+- cpm
+
+Convert A Matrix Of Given RNA Counts To A Matrix Of Counts Per Million.
+
+- d
+
+An arbitrary RNA counts data matrix included in this R package as an
+example.
+
+- expression_boxplot
+
+Boxplots expression of each group of a gene.
+
+- get_group_data
+
+Filters RNA data of control or treatment group.
+
+- group_t_test
+
+Run Welch t test on gene expression of control group and treatment
+group.
+
+- heatmap_expression
+
+Create a heatmap of expression of genes of samples in RNA level.
 
 ## Contributions
 
@@ -95,6 +123,7 @@ contributions. To submit an issue, use the GitHub issues.
     |- get_group_data.R
     |- data.R
     |- cpm.R
+    |- heatmap_expression.R
   |- vignettes
     |- GeneDiffAnalVignettes.Rmd
   |- tests

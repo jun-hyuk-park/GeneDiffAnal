@@ -1,4 +1,4 @@
-#' Create A Matrix Of Given RNA Counts As Counts Per Million.
+#' Convert A Matrix Of Given RNA Counts To A Matrix Of Counts Per Million.
 #' 
 #' A function that calculates counts per million(cpm) of each gene for each
 #' sample.
