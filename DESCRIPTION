@@ -12,8 +12,11 @@ Depends:
     R (>= 3.1.0),
     tidyverse
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
 Imports: 
     utils
 LazyData: true
+VignetteBuilder: knitr
