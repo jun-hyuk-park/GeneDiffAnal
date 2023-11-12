@@ -64,6 +64,11 @@ group.
 
 Create a heatmap of expression of genes of samples in RNA level.
 
+<figure>
+<img src="inst/extdata/GeneDiffAnal_overview.png" alt="Overview" />
+<figcaption aria-hidden="true">Overview</figcaption>
+</figure>
+
 ## Contributions
 
 The name of the author of the package is Jun Hyuk Park. I wrote all

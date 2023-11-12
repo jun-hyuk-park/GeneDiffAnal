@@ -74,6 +74,8 @@ Run Welch t test on gene expression of control group and treatment group.
 
 Create a heatmap of expression of genes of samples in RNA level.
 
+![Overview](inst/extdata/GeneDiffAnal_overview.png)
+
 ## Contributions
 
 The name of the author of the package is Jun Hyuk Park.
