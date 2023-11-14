@@ -64,6 +64,11 @@ group.
 
 Create a heatmap of expression of genes of samples in RNA level.
 
+- fold_change
+
+Calculate fold change of gene expression between control group and
+treatment group.
+
 <figure>
 <img src="inst/extdata/GeneDiffAnal_overview.png" alt="Overview" />
 <figcaption aria-hidden="true">Overview</figcaption>
@@ -113,7 +118,6 @@ contributions. To submit an issue, use the GitHub issues.
   |- data
     |- d.rda
   |- inst
-    CITATION
     |- extdata
       |- d.csv
   |- man
@@ -129,6 +133,7 @@ contributions. To submit an issue, use the GitHub issues.
     |- data.R
     |- cpm.R
     |- heatmap_expression.R
+    |- fold_change.R
   |- vignettes
     |- GeneDiffAnalVignettes.Rmd
   |- tests

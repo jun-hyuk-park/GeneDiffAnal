@@ -74,6 +74,11 @@ Run Welch t test on gene expression of control group and treatment group.
 
 Create a heatmap of expression of genes of samples in RNA level.
 
+- fold_change
+
+Calculate fold change of gene expression between control group and treatment 
+group.
+
 ![Overview](inst/extdata/GeneDiffAnal_overview.png)
 
 ## Contributions
@@ -121,7 +126,6 @@ To submit an issue, use the GitHub issues.
   |- data
     |- d.rda
   |- inst
-    CITATION
     |- extdata
       |- d.csv
   |- man
@@ -137,6 +141,7 @@ To submit an issue, use the GitHub issues.
     |- data.R
     |- cpm.R
     |- heatmap_expression.R
+    |- fold_change.R
   |- vignettes
     |- GeneDiffAnalVignettes.Rmd
   |- tests
