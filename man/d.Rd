@@ -14,4 +14,10 @@ d
 \description{
 Arbitrary RNA Counts matrix.
 }
+\examples{
+d[1,]
+# 1, 2, 1, 1, 1, 1, 2, 1, 1, 2
+
+
+}
 \keyword{datasets}

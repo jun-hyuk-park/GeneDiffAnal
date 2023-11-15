@@ -24,6 +24,8 @@
 #' doi: 10.1165/rcmb.2017-0430TR. PMID: 29624415; PMCID: PMC6096346.
 #' 
 #' @export
+ 
+
 cpm <- function(matrix) {
   # New matrix
   new_matrix <- matrix[,]

@@ -17,3 +17,9 @@ plot
 \description{
 A function that boxplots expression of each group of a gene.
 }
+\examples{
+cpm_d <- cpm(d)
+expression_boxplot(cpm_d, "A1BG")
+
+
+}

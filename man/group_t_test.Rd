@@ -4,12 +4,12 @@
 \alias{group_t_test}
 \title{Run Welch T Test On Control Group And Treatment Group}
 \usage{
-group_t_test(gene, data, alternative = "two.sided")
+group_t_test(data, gene, alternative = "two.sided")
 }
 \arguments{
-\item{gene}{A name of gene that we want to run t test on RNA expression of.}
-
 \item{data}{A matrix data of RNA counts of control and treatment groups.}
+
+\item{gene}{A name of gene that we want to run t test on RNA expression of.}
 
 \item{alternative}{A character string specifying the alternative hypothesis.
 Modify the alternative hypothesis if the control group's expression is less,
@@ -20,6 +20,17 @@ A list object of t.test result.
 }
 \description{
 A function that runs t.test on RNA expression level
+}
+\examples{
+
+cpm_d <- cpm(d)
+t_result <- group_t_test(cpm_d, "A1BG")
+t_result$estimate
+# mean of x, mean of y
+# 2105.722, 1881.544
+# t_result$p.value
+# 0.57375
+
 }
 \references{
 B. L. WELCH. The generalization of student's problem when several

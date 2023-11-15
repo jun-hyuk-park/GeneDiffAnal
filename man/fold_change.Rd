@@ -16,13 +16,12 @@ fold change.
 }
 \description{
 A function that calculates fold change of the RNA counts of gene between
-control group and treatment group
+control group and treatment group in log10.
 }
 \examples{
 
 cpm_d <- cpm(d)
 fold_change(cpm_d, "AACS")
 #1.459728
-
 
 }
