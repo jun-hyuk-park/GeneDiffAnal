@@ -26,7 +26,7 @@ expression_boxplot <- function(data, gene) {
   # Convert each matrix data into data frames.
   control_table <- data.frame(Group = rep("control", ncol(control_group)),
                               Counts = control_group[gene,])
-  treatment_table <- data.frame(Group = rep("treatment", ncol(control_group)),
+  treatment_table <- data.frame(Group = rep("treatment", ncol(treatment_group)),
                                 Counts = treatment_group[gene,])
   
   # Combine these two data frames.

@@ -142,6 +142,7 @@ To submit an issue, use the GitHub issues.
     |- cpm.R
     |- heatmap_expression.R
     |- fold_change.R
+    |- coexpression_plot.R
   |- vignettes
     |- GeneDiffAnalVignettes.Rmd
   |- tests
