@@ -149,4 +149,6 @@ To submit an issue, use the GitHub issues.
     |- testthat.R
     |- testthat
       |- test-cpm.R
+      |- test-fold_change.R
+      |- test-grop_t_test.R
 ```

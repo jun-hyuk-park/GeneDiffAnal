@@ -134,10 +134,13 @@ contributions. To submit an issue, use the GitHub issues.
     |- cpm.R
     |- heatmap_expression.R
     |- fold_change.R
+    |- coexpression_plot.R
   |- vignettes
     |- GeneDiffAnalVignettes.Rmd
   |- tests
     |- testthat.R
     |- testthat
       |- test-cpm.R
+      |- test-fold_change.R
+      |- test-grop_t_test.R
 ```
