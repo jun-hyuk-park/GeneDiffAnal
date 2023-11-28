@@ -6,6 +6,11 @@
 #'
 #' @return A heatmap of gene expression.
 #' 
+#' @examples
+#' dev.off()
+#' cpm_d <- cpm(d)
+#' heatmap_expression(cpm_d)
+#' 
 heatmap_expression <- function(data) {
   return(stats::heatmap(data))
 }

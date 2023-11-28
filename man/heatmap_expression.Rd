@@ -15,3 +15,9 @@ A heatmap of gene expression.
 \description{
 Create a heatmap of expression of genes of samples in RNA level.
 }
+\examples{
+dev.off()
+cpm_d <- cpm(d)
+heatmap_expression(cpm_d)
+
+}
