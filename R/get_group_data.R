@@ -15,7 +15,7 @@
 #' @export
 get_group_data <- function(data, group) {
   if(group == "control") { # Get control group data.
-    return(data[, grep("*control", colnames(data), ignore.case = TRUE)])
+    return(data[, grep("*control*", colnames(data), ignore.case = TRUE)])
   }
   else if(group == "treatment") { # Get treatment group data.
     return(data[,grep("*treatment*", colnames(data), ignore.case = TRUE)])

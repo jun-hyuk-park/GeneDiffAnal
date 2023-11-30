@@ -1,4 +1,4 @@
 test_that("fold_change testing", {
-  cpm_d <- cpm(d)
-  expect_identical(round(fold_change(cpm_d, "A1BG"), 3), -0.049)
+  cpm_rna_counts <- cpm(rna_counts)
+  expect_identical(round(fold_change(cpm_rna_counts, "A1BG"), 3), -0.049)
 })

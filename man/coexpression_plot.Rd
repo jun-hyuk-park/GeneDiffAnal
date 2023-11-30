@@ -21,8 +21,8 @@ plot
 A function that plots gene expression of twe genes on same plot.
 }
 \examples{
-cpm_d <- cpm(d)
-coexpression_plot(cpm_d, "A1BG", "A2M")
+cpm_rna_counts <- cpm(rna_counts)
+coexpression_plot(cpm_rna_counts, "A1BG", "A2M")
 
 
 }
