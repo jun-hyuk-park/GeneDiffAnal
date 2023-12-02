@@ -9,8 +9,8 @@
 #' @return plot
 #' 
 #' @examples
-#' cpm_d <- cpm(d)
-#' expression_boxplot(cpm_d, "A1BG")
+#' cpm_rna_counts <- cpm(rna_counts)
+#' expression_boxplot(cpm_rna_counts, "A1BG")
 #' 
 #' 
 #' @import ggplot2

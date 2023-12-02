@@ -7,7 +7,9 @@
 heatmap_expression(data)
 }
 \arguments{
-\item{data}{Data of RNA counts.}
+\item{data}{A RNA counts data matrix where columns are sample names and
+row names are gene names. Each cell represents the RNA copy counts of that
+column sample and row gene.}
 }
 \value{
 A heatmap of gene expression.
@@ -17,7 +19,7 @@ Create a heatmap of expression of genes of samples in RNA level.
 }
 \examples{
 dev.off()
-cpm_d <- cpm(d)
-heatmap_expression(cpm_d)
+cpm_rna_counts <- cpm(rna_counts)
+heatmap_expression(rna_counts)
 
 }

@@ -11,8 +11,8 @@
 #' 
 #' @examples
 #' 
-#' cpm_d <- cpm(d)
-#' fold_change(cpm_d, "AACS")
+#' cpm_rna_counts <- cpm(rna_counts)
+#' fold_change(cpm_rna_counts, "AACS")
 #' #1.459728
 #' 
 #' @export

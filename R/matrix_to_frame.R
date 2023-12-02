@@ -8,7 +8,8 @@
 #' 
 #' 
 #' @examples
-#' matrix_to_frame(rna_counts)
+#' rna_frame <- matrix_to_frame(rna_counts)
+#' print(rna_frame)
 #' 
 #' @import dplyr
 #' @import stats

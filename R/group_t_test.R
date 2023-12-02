@@ -14,8 +14,8 @@
 #' 
 #' @examples
 #' 
-#' cpm_d <- cpm(d)
-#' t_result <- group_t_test(cpm_d, "A1BG")
+#' cpm_rna_counts <- cpm(rna_counts)
+#' t_result <- group_t_test(cpm_rna_counts, "A1BG")
 #' t_result$estimate
 #' # mean of x, mean of y
 #' # 2105.722, 1881.544

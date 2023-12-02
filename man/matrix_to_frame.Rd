@@ -7,13 +7,15 @@
 matrix_to_frame(matrix)
 }
 \arguments{
-\item{matrix}{}
+\item{matrix}{A RNA counts data matrix where columns are sample names and
+row names are gene names. Each cell represents the RNA copy counts of that
+column sample and row gene.}
 }
 \description{
 A function that convert RNA counts matrix into a data frame.
 }
 \examples{
-matrix_to_frame(rna_counts)
-
+rna_frame <- matrix_to_frame(rna_counts)
+print(rna_frame)
 
 }

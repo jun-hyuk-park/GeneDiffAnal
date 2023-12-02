@@ -8,12 +8,11 @@
 #' @return Returns a CPM matrix
 #' 
 #' @examples
-#' data(library="GeneDiffAnal")
-#' cpm_d <- cpm(d)
+#' cpm_rna_counts <- cpm(rna_counts)
 #' 
-#' d["A1BG", "Control1"]
+#' rna_counts["A1BG", "Control1"]
 #' # 1
-#' cpm_d["A1BG", "Control1"]
+#' cpm_rna_counts["A1BG", "Control1"]
 #' # 2087.683
 #'  
 #' @references 
