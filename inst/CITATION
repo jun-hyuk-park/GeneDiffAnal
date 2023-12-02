@@ -1,0 +1,6 @@
+bibentry(
+  bibtype  = "Software",
+  title    = "GeneDiffAnal",
+  author   = "Jun Hyuk Park",
+  year     = 2023
+)

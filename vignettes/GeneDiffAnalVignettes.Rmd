@@ -45,8 +45,12 @@ data(package = "GeneDiffAnal")
 
 ## Components
 
-The minimal requirements of an R package is described, followed by other
-components that are required for the purpose of this course. 
+The minimal requirements of GeneDiffAnal package. `rna_counts.csv` is 
+optionally reuqired to run examples.
+
+```{r, fig.cap="vignettes_img1", fig.align="center"}
+knitr::include_graphics("vignettes_img1.png")
+```
 
 ### Minimal requirements
 
