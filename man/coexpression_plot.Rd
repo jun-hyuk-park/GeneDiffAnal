@@ -15,7 +15,7 @@ names.}
 \item{gene2}{Second gene to plot.}
 }
 \value{
-plot
+coexpression plot
 }
 \description{
 A function that plots gene expression of twe genes on same plot.

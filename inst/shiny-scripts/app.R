@@ -1,9 +1,8 @@
 #' Shiny app
 #' 
-#' @description
+#' @description Use shiny app to create interactive user interface.
 #' 
 #' @import shiny
-#' @import plotly
 #' @improt ggplot2
 #' 
 #' @export
@@ -11,19 +10,22 @@
 
 # Define UI
 ui <- shiny::fluidPage(
-  # shinyjs::useShinyjs(),
   # Title 
   shiny::titlePanel("Gene expression bar graph"),
   
-  # Side bar
+  # Side bar. User can upload file, select variables, turn on or off 
+  # normalizaiton
   shiny::sidebarLayout(
       shiny::sidebarPanel(
         shiny::fileInput("file", "Choose a CSV file"),
         # Select variable
         shiny::selectInput("x_var", "Choose X variable:", ""),
         shiny::selectInput("y_var", "Choose Y variable:", ""),
-        # shiny::actionButton("showButton", "Submit")
+        checkboxInput("normalize", "Use Counts Per Million normalization",
+                      value = FALSE)
     ),
+    
+  # Main panel
   shiny::mainPanel(
     shiny::plotOutput("scatter_plot")
   )
@@ -34,30 +36,27 @@ ui <- shiny::fluidPage(
 server <- function(input, output, session) {
   # Read the uploaded dataset
   data <- reactive({
-    req(input$file)
+    shiny::req(input$file)
     read_data(input$file$datapath)
     
   })
   # Update choices for x and y variable based on the selected dataset
   observe({
     if (!is.null(data())) {
-      updateSelectInput(session, "x_var", choices = rownames(data()))
-      updateSelectInput(session, "y_var", choices = rownames(data()))
+      shiny::updateSelectInput(session, "x_var", choices = rownames(data()))
+      shiny::updateSelectInput(session, "y_var", choices = rownames(data()))
     }
     
   })
-
-  shiny::observeEvent(input$showButton, {
-    if (!is.null(input$x_var) && !is.null(input$y_var) && 
-      input$x_var %in% rownames(data()) && input$y_var %in% rownames(data())) {
-    # Create a scatter plot based on user inputs
-    output$scatter_plot <- shiny::renderPlot({
+  
+  output$scatter_plot <- renderPlot({
+    shiny::req(input$x_var, input$y_var)
+    if(input$normalize) { # If a user wants normalization
+      coexpression_plot(cpm(data()), input$x_var, input$y_var)
+    } else { # If a user does not want normalization
       coexpression_plot(data(), input$x_var, input$y_var)
-      })
-    # shinyjs::enable("scatter_plot")
     }
-   })
-   # shinyjs::disable("scatter_plot")
+  })
 }
 # Run the Shiny app
 runGeneDiffAnal <- function() {

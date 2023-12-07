@@ -14,7 +14,7 @@
 #' coexpression_plot(cpm_rna_counts, "A1BG", "A2M")
 #' 
 #' 
-#' @return plot
+#' @return coexpression plot
 #' @export
 #' 
 coexpression_plot <- function(data, gene1, gene2) {
