@@ -28,7 +28,11 @@ devtools::install_github("jun-hyuk-park/GeneDiffAnal", build_vignettes = TRUE)
 library("GeneDiffAnal")
 ```
 
-To run the shinyApp: Under construction
+To run the shinyApp:
+
+``` r
+runGeneDiffAnal()
+```
 
 ## Overview
 
@@ -42,7 +46,7 @@ browseVignettes("GeneDiffAnal")
 
 Convert A Matrix Of Given RNA Counts To A Matrix Of Counts Per Million.
 
-- d
+- rna_counts
 
 An arbitrary RNA counts data matrix included in this R package as an
 example.
@@ -116,7 +120,7 @@ contributions. To submit an issue, use the GitHub issues.
   |- LICENSE
   |- README
   |- data
-    |- d.rda
+    |- rna_counts.rda
   |- inst
     |- extdata
       |- d.csv

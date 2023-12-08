@@ -4,10 +4,10 @@
 \alias{read_data}
 \title{Reads RNA copy counts data}
 \usage{
-read_data(file_name, sep = ",")
+read_data(file_path, sep = ",")
 }
 \arguments{
-\item{file_name}{a name of RNA copy counts data. First column is Gene.
+\item{file_path}{path of RNA reads counts data. First column is Gene.
 Rest of columns are samples}
 
 \item{sep}{separator charactor in the file. ',' by as default.}
