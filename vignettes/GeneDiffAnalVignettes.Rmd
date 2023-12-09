@@ -117,7 +117,7 @@ For example,
 
 ```{r}
 rna_file <- system.file("extdata/rna_counts.csv", package="GeneDiffAnal")
-read_data(rna_file)
+GeneDiffAnal::read_data(rna_file)
 ```
 
 The output of `read_data` on the example file is `rna_counts` which is 
@@ -133,6 +133,53 @@ analyses (Koch et al. 2018).
 This function takes a matrix as a parameter which expects a matrix of RNA reads 
 counts as input. It returns a new matrix, where each entry corresponds to the 
 counts per million of genes and samples.
+
+After normalization, a user can use `heatmap_expression` to visualize the 
+gene expression of each gene and sample. It takes RNA reads data as a parameter.
+It returns a heatmap.
+
+```{r}
+GeneDiffAnal::heatmap_expression(rna_counts)
+```
+
+T test is a statistical test that is used to compare the means of two groups 
+(Welch et al. 1947). It is often used in hypothesis testing to determine if 
+there is a significant difference between the means of two groups such as 
+control and treatment groups. A user can use this function to run t test to see 
+if there is differential gene expression between control group and treatment 
+group.
+
+`group_t_test` is a function that runs Welch T test on control group and 
+treatment group. It takes data, gene and alternative as parameters. data 
+parameter is a matrix of RNA copies of control and treatment groups. gene 
+parameter is a name of gene that a user want to run t test on RNA expression 
+of. A gene name should be in the rows of data. alternative parameter is a 
+string specifying the alternative hyopothesis of the t test. Modify the 
+alternative hypothesis if the hypothesis is that the control group's 
+expression is less or greater than the expression of treatment group.
+
+
+```{r}
+GeneDiffAnal::group_t_test(rna_counts, "AACS")
+```
+
+`fold_change` is a function that calculates gene fold change of the RNA 
+copies between control group and treatment group in log10. It takes data and 
+gene as parameteres. data parameter is a RNA reads matrix. gene parameter is a 
+name of gene to be take to calculate fold change. It returns fold change in 
+double.
+
+## Shiny app
+
+This R package has a interactive user interface to improve gene differential 
+analysis. To run this interactive UI, use `runGeneDiffAnal` function.
+
+```{r}
+GeneDiffAnal::runGeneDiffAnal()
+```
+
+This function utilizes Shiny package which is an open source R package that 
+provides web applications.
 
 ## Package References
 

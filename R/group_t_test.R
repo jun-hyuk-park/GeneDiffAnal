@@ -7,8 +7,8 @@
 #' @param gene A name of gene that we want to run t test on RNA expression of.
 #' 
 #' @param alternative A character string specifying the alternative hypothesis.
-#' Modify the alternative hypothesis if the control group's expression is less,
-#' the same or greater. 
+#' Modify the alternative hypothesis if the hypothesis control group's 
+#' expression is less or greater than the expression in treatment group. 
 #' 
 #' @return A list object of t.test result.
 #' 
@@ -28,10 +28,13 @@
 #' @export
 
 group_t_test <- function(data, gene, alternative="two.sided") {
+  if (!(alternative %in% c("two.sided", "less", "greater"))) {
+    stop("alternative should be 'two.sided', 'less' or 'greater'")
+  }
   if (gene %in% rownames(data)) {
   control <- get_group_data(data, "control")[gene,]
   treatment <- get_group_data(data, "treatment")[gene,]
-  return(stats::t.test(control, treatment))
+  return(stats::t.test(control, treatment, alternative=alternative))
   } else {
     stop(paste0(gene, " is not in data"))
   }
