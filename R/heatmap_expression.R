@@ -13,8 +13,10 @@
 #' cpm_rna_counts <- cpm(rna_counts)
 #' heatmap_expression(rna_counts)
 #' 
+#' @export
+
 heatmap_expression <- function(data) {
-  return(stats::heatmap(data))
+  return(stats::heatmap(data, ylab="Gene", xlab="Sample", margins=c(8, 8)))
 }
 
 #[END]

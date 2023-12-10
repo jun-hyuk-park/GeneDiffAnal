@@ -117,7 +117,7 @@ For example,
 
 ```{r}
 rna_file <- system.file("extdata/rna_counts.csv", package="GeneDiffAnal")
-GeneDiffAnal::read_data(rna_file)
+read_data(rna_file)
 ```
 
 The output of `read_data` on the example file is `rna_counts` which is 
@@ -139,7 +139,7 @@ gene expression of each gene and sample. It takes RNA reads data as a parameter.
 It returns a heatmap.
 
 ```{r}
-GeneDiffAnal::heatmap_expression(rna_counts)
+heatmap_expression(rna_counts)
 ```
 
 T test is a statistical test that is used to compare the means of two groups 
@@ -160,7 +160,7 @@ expression is less or greater than the expression of treatment group.
 
 
 ```{r}
-GeneDiffAnal::group_t_test(rna_counts, "AACS")
+group_t_test(rna_counts, "AACS")
 ```
 
 `fold_change` is a function that calculates gene fold change of the RNA 
@@ -175,11 +175,28 @@ This R package has a interactive user interface to improve gene differential
 analysis. To run this interactive UI, use `runGeneDiffAnal` function.
 
 ```{r}
-GeneDiffAnal::runGeneDiffAnal()
+# runGeneDiffAnal()
 ```
 
 This function utilizes Shiny package which is an open source R package that 
 provides web applications.
+
+On Shiny app, a user can upload their biological data to analyze. The 
+biological data should be in a certain data format. Columns should be sample 
+names and rows should be names of genes. Each cell is RNA reads counts of 
+the gene and sample. This file should be in csv format.
+
+This Shiny app has 3 visualization functions.
+
+The first one is expression heatmap. After uploading biological data, it 
+automatically draws heatmap of it right after. It clusters experimental 
+groups and genes.
+
+The second visualization is coexpression plot
+
+
+
+
 
 ## Package References
 

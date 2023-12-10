@@ -12,8 +12,8 @@ group_t_test(data, gene, alternative = "two.sided")
 \item{gene}{A name of gene that we want to run t test on RNA expression of.}
 
 \item{alternative}{A character string specifying the alternative hypothesis.
-Modify the alternative hypothesis if the control group's expression is less,
-the same or greater.}
+Modify the alternative hypothesis if the hypothesis control group's
+expression is less or greater than the expression in treatment group.}
 }
 \value{
 A list object of t.test result.

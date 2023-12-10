@@ -8,5 +8,5 @@ knitr::kable(rna_counts, format = "html", caption = "rna_counts, Example of
 
 ## -----------------------------------------------------------------------------
 rna_file <- system.file("extdata/rna_counts.csv", package="GeneDiffAnal")
-GeneDiffAnal::read_data(rna_file)
+read_data(rna_file)
 
