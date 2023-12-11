@@ -2,7 +2,7 @@
 % Please edit documentation in R/coexpression_plot.R
 \name{coexpression_plot}
 \alias{coexpression_plot}
-\title{Plot Coexpression.}
+\title{Plot Coexpression Of Genes.}
 \usage{
 coexpression_plot(data, gene1, gene2)
 }
@@ -18,9 +18,10 @@ names.}
 coexpression plot
 }
 \description{
-A function that plots gene expression of twe genes on same plot.
+A function that plots gene expression of two genes on same plot.
 }
 \examples{
+dev.off()
 cpm_rna_counts <- cpm(rna_counts)
 coexpression_plot(cpm_rna_counts, "A1BG", "A2M")
 

@@ -34,6 +34,18 @@ To run the shinyApp:
 runGeneDiffAnal()
 ```
 
+A user can upload biological data to analyze with the app. A biological
+should be in a specific data structure. It should be a table with sample
+names including words treatment or control in columns and gene names as
+rows. Each cell should represent RNA reads counts of that gene and
+sample of the row and column.
+
+For GeneDiffAnal Shiny app, test data is located at
+`https://github.com/jun-hyuk-park/GeneDiffAnal/blob/main/inst/extdata/rna_counts.csv`.
+
+Using shiny app, a use can plot heatmap, coexpression plot and RNA reads
+boxplots between control and treatment group.
+
 ## Overview
 
 ``` r
@@ -42,18 +54,28 @@ data(package = "GeneDiffAnal") # optional
 browseVignettes("GeneDiffAnal")
 ```
 
+- coexpression_plot
+
+Generate coexpression plot which has RNA reads counts of a gene in each
+x axis and y axis so that a user can see RNA reads counts of two genes
+at the same time.
+
 - cpm
 
 Convert A Matrix Of Given RNA Counts To A Matrix Of Counts Per Million.
 
-- rna_counts
-
-An arbitrary RNA counts data matrix included in this R package as an
-example.
-
 - expression_boxplot
 
 Boxplots expression of each group of a gene.
+
+- fold_change_all.R
+
+Get fold change of all genes in the RNA reads counts data.
+
+- fold_change
+
+Calculate fold change of gene expression between control group and
+treatment group.
 
 - get_group_data
 
@@ -68,10 +90,22 @@ group.
 
 Create a heatmap of expression of genes of samples in RNA level.
 
-- fold_change
+- matrix_to_frame
 
-Calculate fold change of gene expression between control group and
-treatment group.
+Convert RNA reads counts matrix into data frame object.
+
+- read_data
+
+Read RNA reads counts data file and return RNA reads counts
+
+- runGeneDiffAnal
+
+Run shiny app of GeneDiffAnal package.
+
+- rna_counts
+
+An arbitrary RNA counts data matrix included in this R package as an
+example.
 
 <figure>
 <img src="inst/extdata/GeneDiffAnal_overview.png" alt="Overview" />
@@ -103,6 +137,11 @@ B. L. WELCH. The generalization of student’s problem when several
 different population variances are involved. Biometrika. 1947.
 34(1-2):28-35.
 
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J,
+McPherson J, Dipert A, Borges B (2023). *shiny: Web Application
+Framework for R*. R package version 1.8.0,
+<https://CRAN.R-project.org/package=shiny>.
+
 ## Acknowledgement
 
 This package was developed as part of an assessment for 2023 BCB410H:
@@ -123,28 +162,46 @@ contributions. To submit an issue, use the GitHub issues.
     |- rna_counts.rda
   |- inst
     |- extdata
-      |- d.csv
+      |- GeneDiffnAnal_overview.png
+      |- rna_counts.csv
+    |- shiny-scripts
+      |- app.R
   |- man
-    |- read_data.Rd
-    |- group_t_test.Rd
-    |- get_group_data.Rd
-    |- d.Rd
+    |- coexpression_plot.Rd
     |- cpm.Rd
+    |- expression_boxplot.Rd
+    |- fold_change_all.Rd
+    |- fold_change.Rd
+    |- get_group_data.Rd
+    |- group_t_test.Rd
+    |- heatmap_expression.Rd
+    |- matrix_to_frame.Rd
+    |- read_data.Rd
+    |- rna_counts.Rd
+    |- runGeneDiffAnal.Rd
   |- R
+    |- runGeneDiffAnal.R
     |- read_data.R
+    |- matrix_to_frame.R
+    |- heatmap_expression.R
     |- group_t_test.R
     |- get_group_data.R
+    |- fold_change.R
+    |- fold_change_all.R
+    |- expression_boxplot.R
     |- data.R
     |- cpm.R
-    |- heatmap_expression.R
-    |- fold_change.R
-    |- coexpression_plot.R
+    |- coxxpression_plot.R
   |- vignettes
+    |- GeneDiffAnalVignettes.R
     |- GeneDiffAnalVignettes.Rmd
+    |- vignettes_img1.png
   |- tests
     |- testthat.R
     |- testthat
       |- test-cpm.R
-      |- test-fold_change.R
-      |- test-grop_t_test.R
+      |- test-fold_change_all.R
+      |- test_fold_change.R
+      |- test-group_t_test.R
+      |- test-heatmap_expression.R
 ```

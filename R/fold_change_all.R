@@ -26,8 +26,10 @@ fold_change_all <- function(data, decreasing=TRUE) {
     fold <- fold_change(data, gene)
     result <- rbind(result, c(gene, fold))
   }
+  result$Fold <- as.numeric(result$Fold)
   result <- na.omit(result)
-  return(result[order(result$Fold, decreasing=decreasing),])
+  result <- result[order(result$Fold, decreasing=decreasing),]
+  return(arrange(result))
 }
 
 # [END]

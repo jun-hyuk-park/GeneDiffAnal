@@ -169,6 +169,24 @@ gene as parameteres. data parameter is a RNA reads matrix. gene parameter is a
 name of gene to be take to calculate fold change. It returns fold change in 
 double.
 
+```{r}
+fold_change(rna_counts, "AACS")
+```
+
+`fold_change_all` is a function that calculates fold changes of all genes 
+between control group and treatment group.
+
+```{r}
+fold_change_all(rna_counts)
+```
+
+`fold_change_all` is a function that plots column bar plot of fold changes 
+of all genes.
+
+```{r}
+fold_change_column_plot(fold_change_all(rna_counts))
+```
+
 ## Shiny app
 
 This R package has a interactive user interface to improve gene differential 
@@ -186,15 +204,22 @@ biological data should be in a certain data format. Columns should be sample
 names and rows should be names of genes. Each cell is RNA reads counts of 
 the gene and sample. This file should be in csv format.
 
-This Shiny app has 3 visualization functions.
+This Shiny app has 4 visualization functions.
 
 The first one is expression heatmap. After uploading biological data, it 
 automatically draws heatmap of it right after. It clusters experimental 
 groups and genes.
 
-The second visualization is coexpression plot
+The second visualization is coexpression plot. A user can plot gene expression
+of two genes on same plot. X-axis will plot an expression of one gene and 
+Y-axis will plot expression of one another gene.
 
+The third visualization is boxplot. A user can boxplot expression of a gene of 
+two groups such as control and treatment group on the same plot and compare 
+them.
 
+The fourth visualization is column bar plot. A user can column bar plot fold 
+changes between treatment group and control group of each gene.
 
 
 

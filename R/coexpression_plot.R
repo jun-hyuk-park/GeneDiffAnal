@@ -1,6 +1,6 @@
-#' Plot Coexpression.
+#' Plot Coexpression Of Genes.
 #' 
-#' A function that plots gene expression of twe genes on same plot.
+#' A function that plots gene expression of two genes on same plot.
 #' 
 #' @param data A RNA counts matrix. Columns are sample names. Rows are gene
 #' names.
@@ -10,6 +10,7 @@
 #' @param gene2 Second gene to plot.
 #' 
 #' @examples
+#' dev.off()
 #' cpm_rna_counts <- cpm(rna_counts)
 #' coexpression_plot(cpm_rna_counts, "A1BG", "A2M")
 #' 

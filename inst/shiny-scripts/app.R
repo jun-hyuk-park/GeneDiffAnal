@@ -5,17 +5,24 @@
 #' 
 #' 1. Heatmap
 #' 
-#' 2. Coexpression plot.
-#' A user can visualization the expression of two genes in RNA level at
-#' the same time. 
+#' A graphical output of RNA reads counts data visualized by colors. It also 
+#' clusters samples and genes into similar expressions.
 #' 
+#' 2. Coexpression plot.
+#' Visualization the expression of two genes in RNA reads at
+#' the same time on x-axis and y-axis. 
+#' 
+#' 3. Boxplot
+#' Create a boxplot of RNA reads of a gene of two different groups.
+#' 
+#' 4. Column bar plot
 #' 
 #' @references
 #  Grolemund, G. (2015). Learn Shiny - Video Tutorials.
 #' \href{https://shiny.rstudio.com/tutorial/}{Link}
 #' @export
 #'
-#' @importFrom shiny titlePanel,sidebaryLayout,
+#' @importFrom shiny titlePanel,sidebarLayout,verticalLayout,fileInput
 
 # Define UI
 ui <- shiny::fluidPage(
@@ -28,6 +35,9 @@ ui <- shiny::fluidPage(
     style = "text-align: center;",
     shiny::fileInput("file", "Choose a CSV file")),
   
+  ###########
+  # Heatmap #
+  ###########
   shiny::verticalLayout(
       shiny::mainPanel(
         style= "center-items: center;",
@@ -36,18 +46,17 @@ ui <- shiny::fluidPage(
         shiny::plotOutput("heatmap_plot"))),
       
 
-  ####################
-  # Side bar layout2 #
-  ####################
-  # Coexpresion plot. User can select variables, turn on or off 
-  # normalizaiton
+  #######################################
+  # Side bar layout2, coexpression plot #
+  #######################################
+  # User can select variables, turn on or off normalizaiton
   shiny::sidebarLayout(
     shiny::sidebarPanel(
       # Select variable
       shiny::selectInput("x_var", "Choose X variable:", ""),
       shiny::selectInput("y_var", "Choose Y variable:", ""),
       # Normalization turn on or off
-      shiny::checkboxInput("normalize", "Use Counts Per Million normalization",
+      shiny::checkboxInput("scatter_normalize", "Use Counts Per Million normalization",
                     value = FALSE)),
     
     # Main panel
@@ -59,13 +68,35 @@ ui <- shiny::fluidPage(
   # Side bar layout3 #
   ####################
   # Gene boxplot. User can choose a gene to boxplot.
-  #shiny::sidebarLayout(
-  #  shiny::sidebarPanel(
-  #    # Select variable
-  #    shiny::selectInput("gene", "Select gene", ""),
-  #    
-  #  )
-  # )
+  shiny::sidebarLayout(
+    shiny::sidebarPanel(
+      # Select gene
+      shiny::selectInput("boxplot_gene", "Select gene", ""),
+      # Normalization turn on or off
+      shiny::checkboxInput("boxplot_normalize",
+                           "Use Counts Per Million normalization",
+                           value=FALSE)
+    ),
+    shiny::mainPanel(
+      shiny::plotOutput("boxplot")
+    )
+   ),
+  ####################
+  # Vertical layout #
+  ####################
+  # Gene expression fold change column bar plot. See fold change of all genes.
+  
+  shiny::sidebarLayout(
+    shiny::sidebarPanel(
+      shiny::checkboxInput("column_bar_normalize",
+                           "Use counts Per Million normalization",
+                           value=FALSE)
+    ),
+    shiny::mainPanel(
+      div("Gene expression column_bar plot"),
+      shiny::plotOutput("column_bar_plot")
+    )
+  )
   
 )
 
@@ -81,6 +112,8 @@ server <- function(input, output, session) {
     if (!is.null(data())) {
       shiny::updateSelectInput(session, "x_var", choices = rownames(data()))
       shiny::updateSelectInput(session, "y_var", choices = rownames(data()))
+      shiny::updateSelectInput(session, "boxplot_gene", 
+                               choices=rownames(data()))
     }
     
   })
@@ -92,13 +125,31 @@ server <- function(input, output, session) {
   
   output$scatter_plot <- shiny::renderPlot({
     shiny::req(input$x_var, input$y_var)
-    if(input$normalize) { # If a user wants normalization
+    if(input$scatter_normalize) { # If a user wants normalization
       coexpression_plot(cpm(data()), input$x_var, input$y_var)
     } else { # If a user does not want normalization
       coexpression_plot(data(), input$x_var, input$y_var)
     }
   })
+  
+  output$boxplot <- shiny::renderPlot({
+    shiny::req(input$boxplot_gene)
+    if(input$boxplot_normalize) {
+      expression_boxplot(data(), input$boxplot_gene)
+    } else {
+      expression_boxplot(cpm(data()), input$boxplot_gene)
+    }
+  })
+  
+  output$column_bar_plot <- shiny::renderPlot({
+    shiny::req(data())
+    if(input$column_bar_normalize) {
+      fold_change_column_plot(data())
+    } else {
+      fold_change_column_plot(cpm(data()))
+    }
+  })
 }
+
 # Run the Shiny app
 shiny::shinyApp(ui, server)
-

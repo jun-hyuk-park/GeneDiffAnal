@@ -9,6 +9,7 @@
 #' @return plot
 #' 
 #' @examples
+#' dev.off()
 #' cpm_rna_counts <- cpm(rna_counts)
 #' expression_boxplot(cpm_rna_counts, "A1BG")
 #' 
